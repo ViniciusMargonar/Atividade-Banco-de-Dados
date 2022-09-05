@@ -81,11 +81,11 @@ id INT NOT NULL PRIMARY KEY AUTO_INCREMENT
 
 );
 
-INSERT INTO telefonef (funcionario_id, telefone, telefone2, telefone3) VALUES (1, '998306822', '898306822'), (2, '99949922', '898306822'),(3, '998306822', '44446822');
+INSERT INTO telefonef (funcionario_id, telefone, telefone2, telefone3) VALUES (1, '998306822', '898556822','41250456'), (2, '96649922', '898399822','412505226'),(3, '998374822', '42046822','412630456');
 
+SELECT * FROM telefonef;
 
-
-CREATE TABLE telefone_c(
+CREATE TABLE telefonec(
 id INT NOT NULL PRIMARY KEY AUTO_INCREMENT
 ,cliente_id INT NOT NULL
 ,telefone VARCHAR(255) NOT NULL UNIQUE
