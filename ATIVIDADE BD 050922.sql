@@ -100,7 +100,6 @@ id INT NOT NULL PRIMARY KEY AUTO_INCREMENT
 
 INSERT INTO telefonec (cliente_id, telefone, telefone2, telefone3) VALUES (1, '998306822', '898556822','41250456'), (2, '96649922', '898399822','412505226'),(3, '998374822', '42046822','412630456');
 
-
-
+SELECT * FROM telefonec;
 
 
