@@ -77,7 +77,6 @@ id INT NOT NULL PRIMARY KEY AUTO_INCREMENT
 ,telefone2 VARCHAR(255) UNIQUE
 ,telefone3 VARCHAR(255) UNIQUE
 ,ativo CHAR(1) NOT NULL DEFAULT 'S'
-,CHECK (ativo IN('S','N'))
 ,CONSTRAINT telefone_ativo_deve_ser_S_ou_N CHECK (ativo IN('S', 'N'))
 ,CONSTRAINT funcionario_id FOREIGN KEY (funcionario_id) REFERENCES funcionario(id)
 ,CONSTRAINT cliente_id FOREIGN KEY (cliente_id) REFERENCES cliente(id)
@@ -101,7 +100,6 @@ id INT NOT NULL PRIMARY KEY AUTO_INCREMENT
 ,descricao VARCHAR(255) 
 ,total_final DECIMAL NOT NULL
 ,ativo CHAR(1) NOT NULL DEFAULT 'S'
-,CHECK (ativo IN('S','N'))
 ,CONSTRAINT honorario_ativo_deve_ser_S_ou_N CHECK (ativo IN('S', 'N'))
 ,FOREIGN KEY (cliente_id) REFERENCES cliente(id)
 );
@@ -124,10 +122,8 @@ id INT NOT NULL PRIMARY KEY AUTO_INCREMENT
 ,total_final DECIMAL NOT NULL
 ,ativo CHAR(1) NOT NULL DEFAULT 'S'
 ,pago CHAR(1) NOT NULL DEFAULT 'N'
-,CHECK (pago IN('S','N'))
-,CHECK (ativo IN('S','N'))
 ,CONSTRAINT pagamento_ativo_deve_ser_S_ou_N CHECK (ativo IN('S', 'N'))
-,CONSTRAINT pagamento_foi_efetuado_S_ou_N CHECK (ativo IN('S', 'N'))
+,CONSTRAINT pagamento_foi_efetuado_S_ou_N CHECK (pago IN('S', 'N'))
 ,FOREIGN KEY (cliente_id) REFERENCES cliente(id)
 ,FOREIGN KEY (honorario_id) REFERENCES honorario(id)
 );
