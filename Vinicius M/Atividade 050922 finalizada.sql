@@ -133,3 +133,13 @@ INSERT INTO pagamento (cliente_id, honorario_id,total_final, pago) VALUES (1, 1,
 INSERT INTO pagamento (cliente_id, honorario_id,total_final, pago) VALUES (2, 2, 625.00, 'S');
 
 SELECT * FROM pagamento;
+
+
+
+
+
+SELECT cliente.nome_fantasia nome_cliente, pagamento.parcelas_pagas
+FROM pagamento, cliente, honorario, funcionario
+WHERE cliente.id = pagamento.cliente_id
+AND honorario.id = pagamento.honorario_id
+AND cliente.id = honorario.cliente_id;
